@@ -42,7 +42,7 @@ class UnigramFeatureExtractor(FeatureExtractor):
         #self.words_list = []
 
     def size(self):
-        return 14000
+        return 15000
 
     def get_indexer(self):
         return self.indexer
@@ -1381,7 +1381,7 @@ class PerceptronClassifier(SentimentClassifier):
     def __init__(self, train_exs, feat_extractor):
         self.feat_extractor = feat_extractor
         weight_vector = np.zeros(self.feat_extractor.size())
-        epoch = 12 if self.feat_extractor.size() == 14000 else 9
+        epoch = 12 if self.feat_extractor.size() == 15000 else 9
         for i in range(epoch):
             random.seed(3)
             random.shuffle(train_exs)
@@ -1417,7 +1417,7 @@ class LogisticRegressionClassifier(SentimentClassifier):
     def __init__(self, train_exs, feat_extractor):
         self.feat_extractor = feat_extractor
         weight_vector = np.zeros(self.feat_extractor.size())
-        epoch = 13 if self.feat_extractor.size() == 14000 else 9
+        epoch = 13 if self.feat_extractor.size() == 15000 else 9
         for i in range(epoch):
             random.seed(1)
             random.shuffle(train_exs)
