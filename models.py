@@ -1417,7 +1417,7 @@ class LogisticRegressionClassifier(SentimentClassifier):
     def __init__(self, train_exs, feat_extractor):
         self.feat_extractor = feat_extractor
         weight_vector = np.zeros(self.feat_extractor.size())
-        epoch = 13 if self.feat_extractor.size() == 15000 else 9
+        epoch = 12 if self.feat_extractor.size() == 15000 else 9
         for i in range(epoch):
             random.seed(1)
             random.shuffle(train_exs)
